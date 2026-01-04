@@ -1,0 +1,49 @@
+version: "3.1"
+
+stories:
+
+- story: neutral path
+  steps:
+  - intent: neutral
+  - action: action_conversation
+
+- story: angry_face
+  steps:
+  - intent: angry_face
+  - action: utter_anger_face
+  - action: utter_suggest_activity
+  - action: action_conversation
+
+- story: disgust_face
+  steps:
+  - intent: disgust_face
+  - action: utter_disgust_face
+  - action: utter_suggest_activity
+  - action: action_conversation
+
+- story: fear_face
+  steps:
+  - intent: fear_face
+  - action: utter_fear_face
+  - action: utter_suggest_activity
+  - action: action_conversation
+
+- story: happy_face
+  steps:
+  - intent: happy_face
+  - action: utter_joy_face
+  - action: utter_suggest_activity
+  - action: action_conversation
+
+- story: sad_face
+  steps:
+  - intent: sad_face
+  - action: utter_sadness_face
+  - action: utter_suggest_activity
+  - action: action_conversation
+
+- story: surprise_face
+  steps:
+  - intent: surprise_face
+  - action: utter_surprise_face
+  - action: action_conversation

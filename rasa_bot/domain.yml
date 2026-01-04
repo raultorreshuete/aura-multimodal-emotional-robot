@@ -1,0 +1,136 @@
+version: '3.1'
+intents:
+- anger
+- disgust
+- fear
+- joy
+- neutral
+- sadness
+- surprise
+- angry_face
+- disgust_face
+- fear_face
+- happy_face
+- sad_face
+- surprise_face
+- like-joy
+- dislike-sadness
+- dislike-anger
+- dislike-fear
+- dislike-disgust
+
+responses:
+  utter_joy:
+  - text: Me alegra que estés feliz. ¿Te gustaría hacer algo en particular hoy?
+  utter_joy_2:
+  - text: Que bien. Hablemos un rato, o si quieres dime algo que te apetezca hacer.
+  utter_joy_face:
+  - text: Te veo bien. ¿Te gustaría hacer algo en particular hoy? Si quieres podemos hablar un rato 
+  utter_sadness:
+  - text: Siento oír eso, ¿hacemos algo que te anime?
+  utter_sadness_2:
+  - text: Entiendo. Si necesitas cualquier cosa dímelo.
+  utter_sadness_face:
+  - text: Te noto triste. ¿Te gustaría hacer algo para animarte?
+  utter_anger:
+  - text: Siento que te sientas así. ¿Por qué no hacemos algo para relajarte?
+  utter_anger_2:
+  - text: Entiendo tu frustración. Déjame saber cómo ayudarte
+  utter_anger_face:
+  - text: Veo que estás enfadado. ¿Por qué no hacemos algo para relajarte?
+  utter_fear:
+  - text: Siento que tengas miedo. ¿Quieres que lo hablemos o prefieres distraerte?
+  utter_fear_2:
+  - text: Entiendo que tengas miedo. Es completamente válido sentir eso. Dime cómo ayudarte.
+  utter_fear_face:
+  - text: Veo que tienes miedo. ¿Quieres que lo hablemos o prefieres distraerte?
+  utter_surprise:
+  - text: ¿Sorprendido? Cuéntame, ¿qué te ha dejado así?
+  utter_surprise_2:
+  - text: Normal que te haya pillado desprevenida
+  utter_surprise_face:
+  - text: Te noto sorprendido Cuéntame, ¿qué te ha dejado así?
+  utter_disgust:
+  - text: Uf, lo siento mucho que estés sintiendo asco. ¿Quieres contarme qué te ha provocado esa sensación o prefieres hacer algo para olvidarlo?
+  utter_disgust_2:
+  - text: Veo que sigues sintiendo mucho asco. Si que te ha afectado. Dime cómo puedo ayudarte.
+  utter_disgust_face:
+  - text: Te noto incómodo. ¿Quieres contarme qué te ha pasado o prefieres hacer algo para olvidarlo?
+  utter_suggest_activity:
+  - text: Estoy para atenderte. Quiero recordarte que dispongo de opciones de entretenimiento.
+
+actions:
+- action_conversation
+- action_store_likes_dislikes
+
+slots:
+  previous_intent:
+    type: text
+    influence_conversation: true
+    mappings: []
+
+  previous_conversation_intent:
+    type: text
+    influence_conversation: true
+    mappings: []
+
+  first_interaction:
+    type: bool
+    initial_value: true
+    influence_conversation: true
+    mappings: []
+  
+  has_expressed_hapiness:
+    type: bool
+    initial_value: false
+    influence_conversation: true
+    mappings: []
+
+  has_expressed_sadness:
+    type: bool
+    initial_value: false
+    influence_conversation: true
+    mappings: []
+
+  has_expressed_anger:
+    type: bool
+    initial_value: false
+    influence_conversation: true
+    mappings: []
+
+  has_expressed_fear:
+    type: bool
+    initial_value: false
+    influence_conversation: true
+    mappings: []
+
+  has_expressed_surprise:
+    type: bool
+    initial_value: false
+    influence_conversation: true
+    mappings: []
+
+  has_expressed_disgust:
+    type: bool
+    initial_value: false
+    influence_conversation: true
+    mappings: []
+
+  calendar:
+    type: list
+    influence_conversation: false
+    mappings: []
+  
+  likes:
+    type: list
+    influence_conversation: false
+    mappings: []
+  
+  dislikes:
+    type: list
+    influence_conversation: false
+    mappings: []
+  
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

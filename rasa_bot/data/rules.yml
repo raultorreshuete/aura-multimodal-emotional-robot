@@ -1,0 +1,149 @@
+version: "3.1"
+
+rules:
+
+- rule: like-joy path
+  steps:
+  - intent: like-joy 
+  - action: action_store_likes_dislikes
+  - action: action_conversation
+
+- rule: dislike-sadness path
+  steps:
+  - intent: dislike-sadness 
+  - action: action_store_likes_dislikes
+  - action: action_conversation
+
+- rule: dislike-anger path
+  steps:
+  - intent: dislike-anger 
+  - action: action_store_likes_dislikes
+  - action: action_conversation
+
+- rule: dislike-fear path
+  steps:
+  - intent: dislike-fear
+  - action: action_store_likes_dislikes 
+  - action: action_conversation
+
+
+- rule: dislike-disgust path
+  steps:
+  - intent: dislike-disgust 
+  - action: action_store_likes_dislikes
+  - action: action_conversation
+
+
+- rule: joy path
+  steps:
+  - intent: joy
+  - slot_was_set:
+    - has_expressed_hapiness: false
+  - action: utter_joy
+  - action: utter_suggest_activity
+  - action: action_store_likes_dislikes
+  - action: action_conversation
+
+- rule: joy path 2
+  steps:
+  - intent: joy
+  - slot_was_set:
+    - has_expressed_hapiness: true
+  - action: utter_joy_2
+  - action: action_store_likes_dislikes
+  - action: action_conversation
+
+
+- rule: sadness path
+  steps:
+  - intent: sadness
+  - slot_was_set:
+    - has_expressed_sadness: false
+  - action: utter_sadness
+  - action: utter_suggest_activity
+  - action: action_store_likes_dislikes
+  - action: action_conversation
+
+- rule: sadness path 2
+  steps:
+  - intent: sadness
+  - slot_was_set:
+    - has_expressed_sadness: true
+  - action: utter_sadness_2
+  - action: action_store_likes_dislikes
+  - action: action_conversation
+
+- rule: anger path
+  steps:
+  - intent: anger
+  - slot_was_set:
+    - has_expressed_anger: false
+  - action: utter_anger
+  - action: utter_suggest_activity
+  - action: action_store_likes_dislikes
+  - action: action_conversation
+
+- rule: anger path 2
+  steps:
+  - intent: anger
+  - slot_was_set:
+    - has_expressed_anger: true
+  - action: utter_anger_2
+  - action: action_store_likes_dislikes
+  - action: action_conversation
+
+- rule: fear path
+  steps:
+  - intent: fear
+  - slot_was_set:
+    - has_expressed_fear: false
+  - action: utter_fear
+  - action: utter_suggest_activity
+  - action: action_store_likes_dislikes
+  - action: action_conversation
+
+- rule: fear path 2
+  steps:
+  - intent: fear
+  - slot_was_set:
+    - has_expressed_fear: true
+  - action: utter_fear_2
+  - action: action_store_likes_dislikes
+  - action: action_conversation
+
+- rule: surprise path
+  steps:
+  - intent: surprise
+  - slot_was_set:
+    - previous_intent: false
+  - action: utter_surprise
+  - action: action_store_likes_dislikes
+  - action: action_conversation
+
+- rule: surprise path 2
+  steps:
+  - intent: surprise
+  - slot_was_set:
+    - has_expressed_surprise: true
+  - action: utter_surprise_2
+  - action: action_store_likes_dislikes
+  - action: action_conversation
+
+- rule: disgust path
+  steps:
+  - intent: disgust
+  - slot_was_set:
+    - has_expressed_disgust: false
+  - action: utter_disgust
+  - action: utter_suggest_activity
+  - action: action_store_likes_dislikes
+  - action: action_conversation
+
+- rule: disgust path 2
+  steps:
+  - intent: disgust
+  - slot_was_set:
+    - has_expressed_disgust: true
+  - action: utter_disgust_2
+  - action: action_store_likes_dislikes
+  - action: action_conversation

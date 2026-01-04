@@ -1,0 +1,32 @@
+# --- Python General ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.log
+
+# --- Entornos Virtuales ---
+# Ignora cualquier carpeta que se llame venv, env, .venv, etc.
+venv/
+env/
+.env/
+.venv/
+
+# --- RASA (Lo pesado que NO queremos) ---
+.rasa/
+models/
+results/
+# Ignora la base de datos local de Rasa si existe
+rasa.db
+rasa.db-wal
+rasa.db-shm
+
+# --- IDEs y Sistema (Basura) ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- NOTA: Archivos que SÍ se subirán ---
+# Al no poner *.pkl ni *.csv en esta lista, git subirá
+# automáticamente tu 'body_language.pkl' y 'coords.csv'
+# que están en la carpeta de lenguaje corporal.

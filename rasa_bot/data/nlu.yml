@@ -1,0 +1,37 @@
+version: "3.1"
+nlu:
+- intent: joy
+  examples: |
+    - Estoy contenta
+    - Estoy contento
+
+- intent: sadness
+  examples: |
+    - Estoy triste
+    - Estoy deprimido
+    - Estoy deprimida
+
+- intent: anger
+  examples: |
+    - Estoy enfadada
+    - Estoy enfadado
+- intent: fear
+  examples: |
+    - Estoy asustada
+    - Estoy asustado
+
+- intent: surprise
+  examples: |
+    - Estoy sorprendida
+    - Estoy sorprendido
+
+- intent: disgust
+  examples: |
+    - Estoy asqueada
+    - Estoy asqueado
+
+- intent: neutral
+  examples: |
+    - Estoy normal
+    - Estoy un poco aburrida
+    - Estoy un poco aburrido
