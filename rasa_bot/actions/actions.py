@@ -153,8 +153,8 @@ class ActionConversation(Action):
     @staticmethod
     def obtener_memoria (tracker):
         try:
-            client = MongoClient("mongodb+srv://test_user:test_user@rasa.rhkql5s.mongodb.net/?retryWrites=true&w=majority&appName=RASA")
-            db = client["rasa_db"]
+            uri = os.environ.get("MONGO_URI", "TU_URI_SIN_CONTRASEÑA_PARA_LOCAL")
+            client = MongoClient(uri)
             collection = db["user_data"]
             #sender_id = tracker.sender_id
             sender_id = "test_user"
